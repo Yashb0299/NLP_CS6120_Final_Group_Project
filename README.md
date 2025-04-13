@@ -25,7 +25,67 @@
 #### * [group34_email_sentiment_results.csv](https://github.com/Yashb0299/NLP_CS6120_Final_Group_Project/blob/main/group34_email_sentiment_results.csv.zip)
 #### * [group34_test_data_with_clusters.csv](https://github.com/Yashb0299/NLP_CS6120_Final_Group_Project/blob/main/group34_test_data_with_clusters.csv)
 #### 4. Run Python File Associated with Each Module
-##### Spam and Sentiment Email Analysis: Spam Bi-LSTM Supervised Learning
+# Spam and Sentiment Email Analysis: Spam Bi-LSTM Supervised Learning
+
+# Spam Email Classification: Unsupervised Clustering and Supervised Bi-LSTM Analysis
+## How to Run the Project Files
+This project involves unsupervised and supervised spam detection using the Enron-Spam dataset.
+
+## Prerequisites:
+Python 3.8+
+
+Required libraries: pandas, numpy, scikit-learn, nltk, tensorflow, matplotlib, seaborn
+
+Jupyter Notebook or Google Colab
+
+## Dataset Setup:
+Download the dataset from this Kaggle link: https://www.kaggle.com/datasets/wanderfj/enron-spam.
+
+Extract the archive.zip and place the archive folder in the same directory as the notebooks.
+
+## Run Order
+1. group34_unsupervised_spam.ipynb
+  * This notebook performs:
+
+  * Email loading and preprocessing (spam/ham emails from Enron 1–6)
+
+  * TF-IDF vectorization & dimensionality reduction (SVD)
+
+  * Clustering using K-Means and Hierarchical Clustering
+
+  * Visualization with t-SNE
+
+  * Saves two files:
+
+    * group34_train_data_with_clusters.csv
+
+    * group34_test_data_with_clusters.csv
+
+  * Make sure these two CSVs are saved before running the next notebook.
+
+2. group34_supervised_spam.ipynb
+  * This notebook performs:
+
+  * Loads the saved CSVs
+
+  * Tokenizes and pads email text for LSTM input
+
+  * Builds and evaluates a Bi-LSTM model:
+
+    * Baseline (no cluster info)
+
+    * With K-Means clusters
+
+    * With Hierarchical clusters
+
+    * With combined cluster features
+
+  * Uses 5-fold cross-validation and performs final testing
+
+* Includes error analysis for all model types
+
+## Notes
+* Ensure nltk.download('stopwords') and nltk.download('punkt') are run at least once. If using Google Colab, upload the archive folder or mount Google Drive. The output CSV files are reused across the two notebooks—do not delete them between runs.
 
 # Enron Email Sentiment & Emotion Analysis 
 
