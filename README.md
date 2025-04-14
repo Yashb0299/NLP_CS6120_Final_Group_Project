@@ -131,7 +131,7 @@ Extract the archive.zip and place the archive folder in the same directory as th
  * Model Evaluation Metrics: Loss, accuracy, and detailed classification reports (using scikit-learn’s classification_report) for both the VADER-based and BART-based models.
  * Cross-Validation Results: Mean validation accuracy for both models.
 
-# Enron Email Sentiment & Emotion Analysis 
+# Enron Email Sentiment & Emotion Analysis:
 
 This project performs sentiment and emotion analysis on the Enron email dataset using:
 
@@ -145,17 +145,17 @@ This project performs sentiment and emotion analysis on the Enron email dataset 
 
 ## Setup Instructions:
 
-### Unzip the Folder
+### Unzip the Folder:
 
 Download and unzip the submission folder named: `group34_Email_Sentiment_Analysis_With_BERT`
 
-This folder contains all necessary scripts and a preprocessed `Labels.csv` file which was created by preprocessing the `enron spamset` dataset and choosing only `ham` emails
+This folder contains all necessary scripts and a preprocessed `Labels.csv` file which was created by preprocessing the `enron spamset` dataset and choosing only `ham` emails and also a `Results.csv` file which is created after running `Inference_And_Evaluation.py` which provides insightful data.
 
 ## Required: Execution Order:
 
-1. Run `Fine-Tune_BERT_Model.py` to train and save the fine-tuned models  
-2. Run `Inference_And_Evaluation.py` to perform sentiment and emotion analysis and generate final predictions  
-3. Optionally, run `Visualization.py` to generate evaluation plots
+1. Run `Fine-Tune_BERT_Model.py` to train and save the fine-tuned models.
+2. Run `Inference_And_Evaluation.py` to perform sentiment and emotion analysis and generate final predictions.
+3. Optionally, run `Visualization.py` to generate evaluation plots.
 
 ### Required Packages:
 
@@ -176,15 +176,14 @@ Make sure you have the following Python libraries installed:
 
 The required NLTK resources (`punkt`, `stopwords`, `wordnet`, `vader_lexicon`) are automatically downloaded in the code. No manual setup is needed.
 
-Note: This project only uses the `ham/` emails (non-spam).
+Note: This project only uses the `ham` emails (non-spam).
 
 ## How to Run:
 
 ### Step 1: Fine-Tune Models (`Fine-Tune_BERT_Model.py`):
 
 This script will:
-
-- Clean and use manually labeled sentiment from `Labels.csv`  
+- Cleaned and will use manually labeled sentiment from `Labels.csv`  
 - Fine-tune:
   - microsoft/deberta-v3-base
   - cardiffnlp/twitter-roberta-base-sentiment
