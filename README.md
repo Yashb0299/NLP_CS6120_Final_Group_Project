@@ -1,4 +1,8 @@
 # Group34_NLP_CS6120_Final_Group_Project
+
+## Drive Link To Datasets
+https://drive.google.com/drive/folders/1YZy-aY4fPOJ18skEo4UwyuUvkaQzon6d?usp=sharing
+
 ## Description
 
 ### This project analyzed spam and sentiment classification in emails using the Enron dataset. Our objective was to reliably identify spam, non-spam, positive, and negative emails to minimize harmful impacts on corporate environments. We applied unsupervised clustering (K-Means, Hierarchical) and supervised deep learning techniques (Bi-LSTM, BERT), evaluating 13 model configurations across spam detection and sentiment analysis tasks. Results showed strong spam detection accuracy, while sentiment analysis varied: VADER-based models performed strongly overall, and BART-based models provided more balanced yet less accurate sentiment classifications. In addition, we leveraged transformer-based models such as FinBERT, Twitter-RoBERTa, and DeBERTa-v3 — applied in both zero-shot and fine-tuned configurations — to improve sentiment and emotion classification. Fine-tuned ensembles demonstrated stronger generalization and better class balance, while zero-shot models offered baseline comparisons. DistilRoBERTa was also used for zero-shot emotion detection, providing qualitative insights into emotional tone across corporate emails.
