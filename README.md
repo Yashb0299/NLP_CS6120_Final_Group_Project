@@ -86,6 +86,43 @@ Extract the archive.zip and place the archive folder in the same directory as th
 
 ## Notes
 * Ensure nltk.download('stopwords') and nltk.download('punkt') are run at least once. If using Google Colab, upload the archive folder or mount Google Drive. The output CSV files are reused across the two notebooks—do not delete them between runs.
+  
+# Sentiment Email Classification: Unsupervised Clustering and Supervised Bi-LSTM Analysis
+## How to Run the Project Files
+### Prerequisites
+#### Python: Version 3.8 or later
+#### Required Packages:
+ * numpy
+ * pandas
+ * matplotlib
+ * seaborn
+ * nltk
+ * transformers
+ * scikit-learn
+ * tensorflo
+ * keras-tuner
+ * ```pip install numpy pandas matplotlib seaborn nltk transformers scikit-learn tensorflow keras-tuner```
+#### Data Requirements
+#### Email Data:Ensure your email data is stored in an enron_email_data/ directory with subdirectories such as enron1/, enron2/, etc.
+#### Labeled File: Unzip and place the email_sentiment_results.csv file (produced by running the sentiment analysis) in the repository root or update the path in the code accordingly.
+### How to Run
+#### To run the entire pipeline (all in one file), navigate to the repository directory in your terminal and execute:
+```python group34_unsupervised_sentiment.py```
+#### When executed, the script will:
+#### Load and Clean Data: Scan the specified folders to load each email (.txt file) and clean it by removing headers, stopwords, numbers, punctuation, and custom words.
+#### TF-IDF Vectorization and Clustering: Convert the cleaned text into TF-IDF features (up to 5000 features), normalize the data, reduce the dimensionality using PCA (to 2 dimensions), and apply KMeans clustering. The Elbow Method plot helps to choose the optimal number of clusters (set to 4 in the code). Cluster assignments and representative features for each cluster are visualized.
+#### Sentiment Labeling: Use NLTK’s VADER to calculate sentiment polarity scores and use the Transformers pipeline with the facebook/bart-large-mnli model for zero-shot sentiment classification.
+#### Data Preparation for Modeling: Tokenize the cleaned text, pad the sequences to a uniform length (200 tokens), and one-hot encode the sentiment labels for model training.
+#### Model Building, Tuning, and Training: Define a BiLSTM model with tunable hyperparameters. Use Keras Tuner’s RandomSearch to explore 10 hyperparameter configurations based on the VADER-labeled data. Train final BiLSTM models for both the VADER-based and BART-based sentiment labels using the best configuration.
+#### Model Evaluation: Evaluate the models on test sets and output final loss, accuracy, and classification metrics (precision, recall, F1-score) for each sentiment labeling method. Additionally, cross-validation is performed to assess model robustness.
+### Output
+#### After running the script, you will see printed outputs for:
+ * TF-IDF Features Sample: A preview of the feature matrix.
+ * Elbow Plot: Helps determine the optimal number of clusters.
+ * Cluster Visualization: A 2D scatter plot of the PCA-reduced data colored by cluster assignments.
+ * Bar Plots: Top representative features for each cluster.
+ * Model Evaluation Metrics: Loss, accuracy, and detailed classification reports (using scikit-learn’s classification_report) for both the VADER-based and BART-based models.
+ * Cross-Validation Results: Mean validation accuracy for both models.
 
 # Enron Email Sentiment & Emotion Analysis 
 
