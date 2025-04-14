@@ -143,13 +143,21 @@ This project performs sentiment and emotion analysis on the Enron email dataset 
 - Hybrid ensemble (soft-voting: DeBERTa + Twitter-RoBERTa)
 - Emotion classification (DistilRoBERTa)
 
-## Required: Execution Order
+## Setup Instructions:
+
+### Unzip the Folder
+
+Download and unzip the submission folder named: `group34_Email_Sentiment_Analysis_With_BERT`
+
+This folder contains all necessary scripts and a preprocessed `Labels.csv` file which was created by preprocessing the `enron spamset` dataset and choosing only `ham` emails
+
+## Required: Execution Order:
 
 1. Run `Fine-Tune_BERT_Model.py` to train and save the fine-tuned models  
 2. Run `Inference_And_Evaluation.py` to perform sentiment and emotion analysis and generate final predictions  
 3. Optionally, run `Visualization.py` to generate evaluation plots
 
-### Required Packages
+### Required Packages:
 
 Make sure you have the following Python libraries installed:
 
@@ -164,20 +172,18 @@ Make sure you have the following Python libraries installed:
 - seaborn
 - wordcloud
 
-## NLTK Resource Setup
+## NLTK Resource Setup:
 
 The required NLTK resources (`punkt`, `stopwords`, `wordnet`, `vader_lexicon`) are automatically downloaded in the code. No manual setup is needed.
 
 Note: This project only uses the `ham/` emails (non-spam).
 
+## How to Run:
 
-## How to Run
-
-### Step 1: Fine-Tune Models (`Fine-Tune_BERT_Model.py`)
+### Step 1: Fine-Tune Models (`Fine-Tune_BERT_Model.py`):
 
 This script will:
 
-- Load all `ham/` emails  
 - Clean and use manually labeled sentiment from `Labels.csv`  
 - Fine-tune:
   - microsoft/deberta-v3-base
@@ -189,7 +195,7 @@ This script will:
 
 ---
 
-### Step 2: Run Analysis Pipeline (`Inference_And_Evaluation.py`)
+### Step 2: Run Analysis Pipeline (`Inference_And_Evaluation.py`):
 
 This script will:
 
@@ -205,7 +211,7 @@ This script will:
 
 ---
 
-### Step 3: Visualizations (`Visualization.py`)
+### Step 3: Visualizations (`Visualization.py`):
 
 This script automatically generates:
 
@@ -218,7 +224,7 @@ This script automatically generates:
 
 All visual outputs are saved to the `figures/` directory.
 
-## Output Example
+## Output Example:
 
 Sample prediction output for a randomly selected email:
 
